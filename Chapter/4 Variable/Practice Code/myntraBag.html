@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Bag</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="add-to-bag">Add to Bag</button>
+    <button class="move-to-wishlist">Move to Wishlist</button>
+    <button class="add-sale-item">Add 1 + 1 Sale item</button>
+    <h1 id="bag-count">Your bag has 0 items</h1>
+
+    <script>
+        let bagCount = 0;
+
+        const bagCountElement = document.getElementById('bag-count');
+        const addToBagButton = document.querySelector('.add-to-bag');
+        const moveToWishlistButton = document.querySelector('.move-to-wishlist');
+        const addSaleItemButton = document.querySelector('.add-sale-item');
+
+        addToBagButton.addEventListener('click', () => {
+            bagCount++;
+            updateBagCount();
+        });
+
+        moveToWishlistButton.addEventListener('click', () => {
+            if (bagCount > 0) {
+                bagCount--;
+                updateBagCount();
+            }
+        });
+
+        addSaleItemButton.addEventListener('click', () => {
+            bagCount += 2; // Adding 1 + 1 sale item
+            updateBagCount();
+        });
+
+        function updateBagCount() {
+            bagCountElement.textContent = `Your bag has ${bagCount} items`;
+        }
+
+    </script>
+</body>
+</html>

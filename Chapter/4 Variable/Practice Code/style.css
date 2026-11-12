@@ -1,0 +1,35 @@
+.add-to-bag{
+    background-color: #3dcc6b;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer; 
+    border-radius: 5px;
+    
+}
+.add-to-bag:hover{
+    background-color: #0056b3;
+}
+.move-to-wishlist{
+    background-color: #eaf0ec;
+    color: #151414;
+    border: 2px solid #0f0f0f;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer; 
+    text-transform: uppercase;   
+}
+.move-to-wishlist:hover{
+    background-color: #2ad44f;
+}
+.add-sale-item{
+    background-color: #65d774;
+    color: #212529;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer; 
+    border-radius: 5px;   
+}
+.add-sale-item:hover{
+    background-color: #e0a800;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    <p id="name"></p>
+    <p id="cart-value"></p>
+    <script>
+        const name = "Sahil";
+        console.log(name);
+        document.querySelector('#name').innerText = name;
+        
+        const GST = 18;
+
+        let cartValue= Math.floor(Math.random() * 1000)*(100+GST)/100;
+        console.log(cartValue);
+        document.querySelector('#cart-value').innerText = `Your cart value is: $${cartValue}`;
+    </script>
+</body>
+</html>
