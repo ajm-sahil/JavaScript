@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truthy and falsy</title>
+  </head>
+  <body>
+    <h1>Truthy and Falsy</h1>
+    <p>
+      In JavaScript, values can be classified as either "truthy" or "falsy".
+    </p>
+    <p>
+      A truthy value is a value that evaluates to true in a boolean context,
+      while a falsy value evaluates to false.
+    </p>
+    <p>Here are some examples:</p>
+    <ul>
+      <li>Truthy values: true, {}, [], 1, "non-empty string"</li>
+      <li>Falsy values: false, null, undefined, 0, "", NaN</li>
+    </ul>
+
+    <p>
+      You can use these values in conditional statements to control the flow of
+      your program.
+    </p>
+    <script>
+      // Example of truthy and falsy values
+      const truthyValue = "Hello";
+      const falsyValue = 0;
+
+      if (truthyValue) {
+        console.log("This is a truthy value.");
+      } else {
+        console.log("This is a falsy value.");
+      }
+
+      if (falsyValue) {
+        console.log("This is a truthy value.");
+      } else {
+        console.log("This is a falsy value.");
+      }
+
+      let age = NaN;
+      if (age) {
+        console.log("You have a valid age.");
+      } else {
+        console.log("Age is not valid.");
+      }
+    </script>
+  </body>
+</html>
