@@ -27,19 +27,9 @@
     <h1>Bat Ball Stump Game</h1>
     <button
       onclick="
-        let userChoice = 'You have chosen Bat';
         let computerChoice = generateComputerChoice();
-        let computerChoiceMessage = `Computer chose is ${computerChoice}`;
-
-        let resultMessage = '';
-        if (computerChoice === 'Bat') {
-          resultMessage = 'It\'s a tie!';
-        } else if (computerChoice === 'Ball') {
-          resultMessage = 'User have win!';
-        } else {
-          resultMessage = 'Computer have win!';
-        }
-        alert(`${userChoice}\n${computerChoiceMessage}\n${resultMessage}`);
+        let result = getResult('Bat', computerChoice);
+        showResult('Bat', computerChoice, result);
       "
     >
       Bat
@@ -47,18 +37,9 @@
 
     <button
       onclick="
-        userChoice = 'You have chosen Ball';
         computerChoice = generateComputerChoice();
-        computerChoiceMessage = `Computer chose is ${computerChoice}`;
-        resultMessage = '';
-        if (computerChoice === 'Bat') {
-          resultMessage = 'Computer have win!';
-        } else if (computerChoice === 'Ball') {
-          resultMessage = 'it\'s a tie!';
-        } else {
-          resultMessage = 'User have win!';
-        }
-        alert(`${userChoice}\n${computerChoiceMessage}\n${resultMessage}`);
+        result = getResult('Ball', computerChoice);
+        showResult('Ball', computerChoice, result);
       "
     >
       Ball
@@ -66,33 +47,58 @@
 
     <button
       onclick="
-        userChoice = 'You have chosen Stump';
         computerChoice = generateComputerChoice();
-        computerChoiceMessage = `Computer chose is ${computerChoice}`;
-        resultMessage = '';
-        if (computerChoice === 'Bat') {
-          resultMessage = 'Computer have win!';
-        } else if (computerChoice === 'Ball') {
-          resultMessage = 'Computer have win!';
-        } else {
-          resultMessage = 'It\'s a tie!';
-        }
-
-        alert(`${userChoice}\n${computerChoiceMessage}\n${resultMessage}`);
+        result = getResult('Stump', computerChoice);
+        showResult('Stump', computerChoice, result);
       "
     >
       Stump
     </button>
+
     <script>
       function generateComputerChoice() {
-        let randomNumber = Math.floor(Math.random() * 3);
-        if (randomNumber > 0 && randomNumber <= 1) {
+        const randomNumber = Math.floor(Math.random() * 3);
+        if (randomNumber === 0) {
           return "Bat";
-        } else if (randomNumber > 1 && randomNumber <= 2) {
+        } else if (randomNumber === 1) {
           return "Ball";
         } else {
           return "Stump";
         }
+      }
+
+      function getResult(userChoice, computerChoice) {
+        if (userChoice === "Bat") {
+          if (computerChoice === "Bat") {
+            return "It's a tie!";
+          } else if (computerChoice === "Ball") {
+            return "User has won!";
+          } else {
+            return "Computer has won!";
+          }
+        } else if (userChoice === "Ball") {
+          if (computerChoice === "Bat") {
+            return "Computer has won!";
+          } else if (computerChoice === "Ball") {
+            return "It's a tie!";
+          } else {
+            return "User has won!";
+          }
+        } else {
+          if (computerChoice === "Bat") {
+            return "Computer has won!";
+          } else if (computerChoice === "Ball") {
+            return "User has won!";
+          } else {
+            return "It's a tie!";
+          }
+        }
+      }
+
+      function showResult(userChoice, computerChoice, result) {
+        alert(
+          `You chose: ${userChoice}\nComputer chose: ${computerChoice}\n${result}`,
+        );
       }
     </script>
   </body>
