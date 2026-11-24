@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkEvenOdd(num) {
+        if (num % 2 == 0) {
+          console.log("Even");
+        } else {
+          console.log("odd");
+        }
+      }
+      checkEvenOdd(5);
+      checkEvenOdd(4);
+      checkEvenOdd(0);
+      checkEvenOdd(9999);
+
+      function larger(num1, num2) {
+        if (num1 > num2) {
+          return num1;
+        } else {
+          return num2;
+        }
+      }
+
+      console.log(larger(4, 5));
+      console.log(larger(5, 5));
+      console.log(larger(3, 2));
+    </script>
+  </body>
+</html>
