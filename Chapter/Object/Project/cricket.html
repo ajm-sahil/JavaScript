@@ -56,6 +56,11 @@
     </button>
 
     <script>
+      let score = {
+        win: 0,
+        lost: 0,
+        tie: 0,
+      };
       function generateComputerChoice() {
         const randomNumber = Math.floor(Math.random() * 3);
         if (randomNumber === 0) {
@@ -70,26 +75,35 @@
       function getResult(userChoice, computerChoice) {
         if (userChoice === "Bat") {
           if (computerChoice === "Bat") {
+            score.tie += 1;
             return "It's a tie!";
           } else if (computerChoice === "Ball") {
+            score.win += 1;
             return "User has won!";
           } else {
+            score.lost += 1;
             return "Computer has won!";
           }
         } else if (userChoice === "Ball") {
           if (computerChoice === "Bat") {
+            score.lost += 1;
             return "Computer has won!";
           } else if (computerChoice === "Ball") {
+            score.tie += 1;
             return "It's a tie!";
           } else {
+            score.win += 1;
             return "User has won!";
           }
         } else {
           if (computerChoice === "Bat") {
+            score.lost += 1;
             return "Computer has won!";
           } else if (computerChoice === "Ball") {
+            score.win += 1;
             return "User has won!";
           } else {
+            score.tie += 1;
             return "It's a tie!";
           }
         }
@@ -97,7 +111,7 @@
 
       function showResult(userChoice, computerChoice, result) {
         alert(
-          `You chose: ${userChoice}\nComputer chose: ${computerChoice}\n${result}`,
+          `You chose: ${userChoice}\nComputer chose: ${computerChoice}\n${result} \nWon: ${score.win}  Lost: ${score.lost}  Tie: ${score.tie}`,
         );
       }
     </script>

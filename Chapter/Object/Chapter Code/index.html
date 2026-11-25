@@ -7,43 +7,57 @@
   </head>
   <body>
     <script>
+      // let product = {
+      //   company: "Mango",
+      //   price: 861,
+      //   item_name: "T-shirt",
+      //   "item-name": "Shirt",
+      // };
+      // console.log(product);
+      // console.log(typeof product);
+      // console.log(
+      //   product.company + " " + product.item_name + " " + product.price,
+      // );
+      // product.company = "Banana";
+
+      // let propertyName = "item-name";
+
+      // console.log(
+      //   product.company +
+      //     " " +
+      //     product.item_name +
+      //     " " +
+      //     product.price +
+      //     " " +
+      //     product["item-name"] +
+      //     " " +
+      //     product[propertyName],
+      // );
+
+      // delete product.company;
+      // console.log(
+      //   product.item_name +
+      //     " " +
+      //     product.price +
+      //     " " +
+      //     product["item-name"] +
+      //     " " +
+      //     product[propertyName],
+      // );
+
       let product = {
         company: "Mango",
-        price: 861,
         item_name: "T-shirt",
-        "item-name": "Shirt",
+        price: 861,
+        rating: {
+          stars: 4.5,
+          noOfReviews: 87,
+        },
+        displayPrice: function () {
+          console.log(`Price of the product is ₹${this.price}`);
+        },
       };
-      console.log(product);
-      console.log(typeof product);
-      console.log(
-        product.company + " " + product.item_name + " " + product.price,
-      );
-      product.company = "Banana";
-
-      let propertyName = "item-name";
-
-      console.log(
-        product.company +
-          " " +
-          product.item_name +
-          " " +
-          product.price +
-          " " +
-          product["item-name"] +
-          " " +
-          product[propertyName],
-      );
-
-      delete product.company;
-      console.log(
-        product.item_name +
-          " " +
-          product.price +
-          " " +
-          product["item-name"] +
-          " " +
-          product[propertyName],
-      );
+      product.displayPrice();
     </script>
   </body>
 </html>
