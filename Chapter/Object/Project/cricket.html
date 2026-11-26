@@ -60,6 +60,9 @@
         win: 0,
         lost: 0,
         tie: 0,
+        displayScore: function () {
+          return `Won: ${score.win}  Lost: ${score.lost}  Tie: ${score.tie}`;
+        },
       };
       function generateComputerChoice() {
         const randomNumber = Math.floor(Math.random() * 3);
@@ -111,7 +114,8 @@
 
       function showResult(userChoice, computerChoice, result) {
         alert(
-          `You chose: ${userChoice}\nComputer chose: ${computerChoice}\n${result} \nWon: ${score.win}  Lost: ${score.lost}  Tie: ${score.tie}`,
+          `You chose: ${userChoice}\nComputer chose: ${computerChoice}\n${result} 
+          \n ${score.displayScore()}`,
         );
       }
     </script>
